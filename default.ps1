@@ -1,4 +1,4 @@
-Framework "4.6" 
+Framework "4.6"
 
 properties {
     $projectName = "ClearMeasure.Bootcamp"
@@ -22,14 +22,13 @@ properties {
     $runOctoPack = $env:RunOctoPack
 
     $databaseName = $projectName
-    $databaseServer = "DESKTOP-SH1P8VL\AASQL"
-	$databaseLogin = "admin"
-	$databasePassword = "wakacje2013"
+    $databaseServer = "localhost\SQLEXPRESS2014"
     $databaseScripts = "$source_dir\Database\scripts"
     $hibernateConfig = "$source_dir\hibernate.cfg.xml"
     $schemaDatabaseName = $databaseName + "_schema"
+    $integratedSecurity = "Integrated Security=true"
     
-    $connection_string = "server=$databaseserver;database=$databasename;User Id=$databaseLogin;Password=$databasePassword"
+    $connection_string = "server=$databaseserver;database=$databasename;$databaseUser;"
     $AliaSql = "$source_dir\Database\scripts\AliaSql.exe"
     $webapp_dir = "$source_dir\UI"
 
@@ -57,6 +56,7 @@ task Init {
 }
 
 task ConnectionString {
+    $connection_string = "server=$databaseserver;database=$databasename;$integratedSecurity;"
     write-host "Using connection string: $connection_string"
     if ( Test-Path "$hibernateConfig" ) {
         poke-xml $hibernateConfig "//e:property[@name = 'connection.connection_string']" $connection_string @{"e" = "urn:nhibernate-configuration-2.2"}
@@ -105,6 +105,7 @@ task CreateCompareSchema -depends SchemaConnectionString {
 }
 
 task SchemaConnectionString {
+    $connection_string = "server=$databaseserver;database=$schemaDatabaseName;@integratedSecurity;"
     write-host "Using connection string: $connection_string"
     #if ( Test-Path "$hibernateConfig" ) {
     #    poke-xml $hibernateConfig "//e:property[@name = 'connection.connection_string']" $connection_string @{"e" = "urn:nhibernate-configuration-2.2"}
