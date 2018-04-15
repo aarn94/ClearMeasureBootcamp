@@ -29,7 +29,7 @@ properties {
     $hibernateConfig = "$source_dir\hibernate.cfg.xml"
     $schemaDatabaseName = $databaseName + "_schema"
     
-    $connection_string = "server=$databaseserver;database=$databasename;integrated security=false;User Id=$databaseLogin;Password=$databasePassword"
+    $connection_string = "server=$databaseserver;database=$databasename;User Id=$databaseLogin;Password=$databasePassword"
     $AliaSql = "$source_dir\Database\scripts\AliaSql.exe"
     $webapp_dir = "$source_dir\UI"
 
