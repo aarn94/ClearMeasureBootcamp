@@ -30,7 +30,7 @@ properties {
     $schemaDatabaseName = $databaseName + "_schema"
     $integratedSecurity = "Integrated Security=fa"
     
-    $connection_string = "server=$databaseserver;database=$databasename;integrated security=false;User Id=$databaseLogin;Password=$databasePassword"
+    $connection_string = "Data Source=$databaseserver;Initial Catalog=$databasename;integrated security=false;User Id=$databaseLogin;Password=$databasePassword"
     $AliaSql = "$source_dir\Database\scripts\AliaSql.exe"
     $webapp_dir = "$source_dir\UI"
 
