@@ -23,14 +23,13 @@ properties {
 
     $databaseName = $projectName
     $databaseServer = "DESKTOP-SH1P8VL\AASQL"
-	$databaseLogin = "admin"
+	$databaseLogin = "adminsada"
 	$databasePassword = "wakacje2013"
     $databaseScripts = "$source_dir\Database\scripts"
     $hibernateConfig = "$source_dir\hibernate.cfg.xml"
     $schemaDatabaseName = $databaseName + "_schema"
-    $integratedSecurity = "Integrated Security=fa"
     
-    $connection_string = "server=$databaseserver;database=$databasename;integrated security=true"
+    $connection_string = "server=$databaseserver;database=$databasename;integrated security=false;User Id=$databaseLogin;Password=$databasePassword"
     $AliaSql = "$source_dir\Database\scripts\AliaSql.exe"
     $webapp_dir = "$source_dir\UI"
 
