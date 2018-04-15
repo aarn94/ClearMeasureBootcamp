@@ -1,7 +1,7 @@
 Framework "4.6" 
 
 properties {
-    $projectName = "ClearMeasure.Bootcamp"
+    $projectName = "Bootcamp"
 	$base_dir = resolve-path .\
 	$source_dir = "$base_dir\src"
     $unitTestAssembly = "ClearMeasure.Bootcamp.UnitTests.dll"
@@ -22,7 +22,7 @@ properties {
     $runOctoPack = $env:RunOctoPack
 
     $databaseName = $projectName
-    $databaseServer = "DESKTOP-SH1P8VL\AASQL"
+    $databaseServer = "DESKTOP-SH1P8VL\AASQLS"
 	$databaseLogin = "admin"
 	$databasePassword = "wakacje2013"
     $databaseScripts = "$source_dir\Database\scripts"
