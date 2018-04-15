@@ -22,8 +22,8 @@ properties {
     $runOctoPack = $env:RunOctoPack
 
     $databaseName = $projectName
-    $databaseServer = "DESKTOP-SH1P8VL\AASQL"
-	$databaseLogin = "adminsada"
+    $databaseServer = "DESKTOP-SH1P8VL\AASQLS"
+	$databaseLogin = "admin"
 	$databasePassword = "wakacje2013"
     $databaseScripts = "$source_dir\Database\scripts"
     $hibernateConfig = "$source_dir\hibernate.cfg.xml"
