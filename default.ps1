@@ -22,13 +22,15 @@ properties {
     $runOctoPack = $env:RunOctoPack
 
     $databaseName = $projectName
-    $databaseServer = "localhost\SQLEXPRESS2014"
+    $databaseServer = "DESKTOP-SH1P8VL\AASQL"
+	$databaseLogin = "admin"
+	$databasePassword = "wakacje2013"
     $databaseScripts = "$source_dir\Database\scripts"
     $hibernateConfig = "$source_dir\hibernate.cfg.xml"
     $schemaDatabaseName = $databaseName + "_schema"
     $integratedSecurity = "Integrated Security=true"
     
-    $connection_string = "server=$databaseserver;database=$databasename;$databaseUser;"
+    $connection_string = "server=$databaseserver;database=$databasename;user Id=$databaseUser;password=$databasePassword"
     $AliaSql = "$source_dir\Database\scripts\AliaSql.exe"
     $webapp_dir = "$source_dir\UI"
 
