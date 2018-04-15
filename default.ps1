@@ -22,7 +22,7 @@ properties {
     $runOctoPack = $env:RunOctoPack
 
     $databaseName = $projectName
-    $databaseServer = "DESKTOP-SH1P8VL\AASQLS"
+    $databaseServer = "DESKTOP-SH1P8VL\AASQL"
 	$databaseLogin = "admin"
 	$databasePassword = "wakacje2013"
     $databaseScripts = "$source_dir\Database\scripts"
@@ -89,7 +89,7 @@ task AcceptanceTest -depends Test {
 
 task RebuildDatabase -depends ConnectionString {
     exec {
-        & $AliaSql Rebuild $databaseServer $databaseName $databaseScripts
+         & $AliaSql Rebuild $databaseServer $databaseName $databaseScripts
     }
 }
 
