@@ -1,7 +1,7 @@
 Framework "4.6" 
 
 properties {
-    $projectName = "Bootcamp"
+    $projectName = "ClearMeasure.Bootcamp"
 	$base_dir = resolve-path .\
 	$source_dir = "$base_dir\src"
     $unitTestAssembly = "ClearMeasure.Bootcamp.UnitTests.dll"
@@ -30,7 +30,7 @@ properties {
     $schemaDatabaseName = $databaseName + "_schema"
     $integratedSecurity = "Integrated Security=fa"
     
-    $connection_string = "Data Source=$databaseserver;Initial Catalog=$databasename;integrated security=false;User Id=$databaseLogin;Password=$databasePassword"
+    $connection_string = "server=$databaseserver;database=$databasename;integrated security=false;User Id=$databaseLogin;Password=$databasePassword"
     $AliaSql = "$source_dir\Database\scripts\AliaSql.exe"
     $webapp_dir = "$source_dir\UI"
 
@@ -89,7 +89,7 @@ task AcceptanceTest -depends Test {
 
 task RebuildDatabase -depends ConnectionString {
     exec {
-         & $AliaSql Rebuild $databaseServer $databaseName $databaseScripts
+        & $AliaSql Rebuild $databaseServer $databaseName $databaseScripts
     }
 }
 
